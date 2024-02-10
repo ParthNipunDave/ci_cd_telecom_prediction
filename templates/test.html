@@ -1,0 +1,78 @@
+<!-- tenure,security,tech,contract,charges -->
+<style type="text/css">
+	
+	tr:nth-child(odd){
+	background-color: white;
+	color:black;
+}
+
+
+tr:nth-child(even){
+	background-color: black;
+	color:white;
+}
+	div{
+		text-align: left;
+		margin: 50px;
+		
+	}
+	body{
+		background-color: cornflowerblue;
+		color:White;
+	}
+a{
+	color:white;
+	text-decoration: none;
+}
+th{
+	color:white;
+	background-color: cornflowerblue;
+	font-weight: bold;
+}
+
+</style>
+<center>
+	<h2> Telecom Company Churn Classification</h2>
+	<form action="/predict" method="GET">
+		<table>
+			<tr>
+				
+				<td>Tenure (Months)::: <input type="number" min=0 placeholder="Number of Months from subscription" name="tenure" ></td>
+				<td>
+					Online Security:: <select name="security">
+						{%for i in results["OnlineSecurity"].keys()%}
+						<option value={{results["OnlineSecurity"][i]}}>{{i}}</option>
+						{%endfor%}
+					</select>
+
+				</td>
+			</tr>
+			<tr>
+				<td>
+					TechSupport::: <select name="tech">
+						{%for i in results["TechSupport"]%}
+						<option value={{results["TechSupport"][i]}}>{{i}}</option>
+						{%endfor%}
+					</select>
+					
+				</td>
+				<td>
+					Contract::: <select name="contract">
+						{%for i in results["Contract"]%}
+						<option value={{results["Contract"][i]}}>{{i}}</option>
+						{%endfor%}
+					</select>
+					
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Charges::: <input type="number" name="charges" required>
+				</td>
+				<td>
+					<input type="submit" name="Predict">
+				</td>
+			</tr>
+		</table>
+</form>
+</center>
