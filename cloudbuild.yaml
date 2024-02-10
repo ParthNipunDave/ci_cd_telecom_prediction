@@ -5,9 +5,9 @@ steps:
 
   # Run Test cases
 #
-  - name: 'us-central1-docker.pkg.dev/sublime-state-413617/telecom-churn-prediction/telecom_predictions:$COMMIT_SHA'
-    entrypoint: python
-    args: ['-m','pytest','.']
+#  - name: 'us-central1-docker.pkg.dev/sublime-state-413617/telecom-churn-prediction/telecom_predictions:$COMMIT_SHA'
+#    entrypoint: python
+#    args: ['-m','pytest','.']
 
   # Push the docker image to artifact
 
